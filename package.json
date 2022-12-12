@@ -1,6 +1,6 @@
 {
   "name": "react-native-ui-components-library",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Fully customizable ui components for react native apps",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
