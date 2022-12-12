@@ -29,11 +29,7 @@ export const colors = {
   },
   link: '#1676FC',
 };
-export const fonts = {
-  title: 'Arial-RoundedExtraBold',
-  alternate: 'Roboto-Bold',
-  content: 'Roboto-Regular',
-};
+
 export const fontSizes = {
   xxs: normalize(12),
   xs: normalize(14),
