@@ -7,7 +7,7 @@ import { Title } from 'react-native-ui-components-library';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    'Arial-RoundedExtraBold': require('../../src/assets/fonts/Arial-RoundedExtraBold.ttf'),
+    'Arial-RoundedExtraBold': require('../assets/fonts/Arial-RoundedExtraBold.ttf'),
   });
 
   React.useEffect(() => {
