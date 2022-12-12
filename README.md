@@ -4,6 +4,14 @@ Fully customizable ui components for react native apps
 
 ## Installation
 
+(prefer yarn)
+
+```sh
+yarn add react-native-ui-components-library
+```
+
+or
+
 ```sh
 npm install react-native-ui-components-library
 ```
@@ -11,11 +19,11 @@ npm install react-native-ui-components-library
 ## Usage
 
 ```js
-import { multiply } from 'react-native-ui-components-library';
+import { Title } from 'react-native-ui-components-library';
 
 // ...
 
-const result = await multiply(3, 7);
+<Title>Title content</Title>;
 ```
 
 ## Contributing
