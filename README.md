@@ -19,13 +19,15 @@ npm install react-native-ui-components-library
 ## Usage
 
 ```js
-import { Title, Content } from 'react-native-ui-components-library';
+import { Title, Content, Button } from 'react-native-ui-components-library';
 
 // ...
 
 <Title>Title content</Title>;
 
 <Pragraph>Paragraph content</Pragraph>;
+
+<Button onPress={() => handleOnPress()}>Press me</Button>;
 ```
 
 ## Contributing
