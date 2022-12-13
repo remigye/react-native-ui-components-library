@@ -1,14 +1,21 @@
 import * as React from 'react';
 
-import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { Alert, SafeAreaView, StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { Title } from 'react-native-ui-components-library';
+import { Paragraph, Title, Button } from 'react-native-ui-components-library';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
     'Arial-RoundedExtraBold': require('../assets/fonts/Arial-RoundedExtraBold.ttf'),
   });
+
+  const buttonOnPress = React.useCallback(() => {
+    Alert.alert(
+      'Button pressed',
+      'It works perfectly. Check all props to create your own layout'
+    );
+  }, []);
 
   React.useEffect(() => {
     async function prepare() {
@@ -26,10 +33,19 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
+
   return (
     <SafeAreaView style={styles.safe} onLayout={onLayoutRootView}>
       <View style={styles.container}>
-        <Title>Title component</Title>
+        <Title overloadStyles={[styles.text, styles.spacing]}>
+          Title component
+        </Title>
+        <Paragraph overloadStyles={[styles.text, styles.spacing]}>
+          Paragraph component
+        </Paragraph>
+        <Button onPress={buttonOnPress} overloadStyles={styles.spacing}>
+          Press me
+        </Button>
       </View>
     </SafeAreaView>
   );
@@ -39,12 +55,11 @@ const styles = StyleSheet.create({
   safe: { flex: 1 },
   container: {
     flex: 1,
-    alignItems: 'center',
+    margin: 16,
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  text: {
+    textAlign: 'center',
   },
+  spacing: { marginVertical: 16 },
 });
