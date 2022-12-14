@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Alert, SafeAreaView, StyleSheet, View } from 'react-native';
+import { Alert, SafeAreaView, StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import {
@@ -8,6 +8,7 @@ import {
   Title,
   Button,
   Checkbox,
+  Container,
 } from 'react-native-ui-components-library';
 
 export default function App() {
@@ -48,7 +49,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.safe} onLayout={onLayoutRootView}>
-      <View style={styles.container}>
+      <Container overloadStyles={styles.container}>
         <Title overloadStyles={[styles.text, styles.spacing]}>
           Title component
         </Title>
@@ -63,7 +64,7 @@ export default function App() {
           setIsChecked={setIsChecked}
           handleOnPress={checkboxOnPress}
         />
-      </View>
+      </Container>
     </SafeAreaView>
   );
 }
@@ -71,9 +72,8 @@ export default function App() {
 const styles = StyleSheet.create({
   safe: { flex: 1 },
   container: {
-    flex: 1,
-    margin: 16,
-    justifyContent: 'center',
+    backgroundColor: '#eee',
+    borderRadius: 16,
   },
   text: {
     textAlign: 'center',
