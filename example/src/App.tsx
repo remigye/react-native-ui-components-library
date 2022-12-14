@@ -3,9 +3,17 @@ import * as React from 'react';
 import { Alert, SafeAreaView, StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { Paragraph, Title, Button } from 'react-native-ui-components-library';
+import {
+  Paragraph,
+  Title,
+  Button,
+  Checkbox,
+} from 'react-native-ui-components-library';
 
 export default function App() {
+  //Checkbox setup
+  const [isChecked, setIsChecked] = React.useState(false);
+
   let [fontsLoaded] = useFonts({
     'Arial-RoundedExtraBold': require('../assets/fonts/Arial-RoundedExtraBold.ttf'),
   });
@@ -16,6 +24,10 @@ export default function App() {
       'It works perfectly. Check all props to create your own layout'
     );
   }, []);
+
+  const checkboxOnPress = React.useCallback(() => {
+    setIsChecked(!isChecked);
+  }, [isChecked]);
 
   React.useEffect(() => {
     async function prepare() {
@@ -46,6 +58,11 @@ export default function App() {
         <Button onPress={buttonOnPress} overloadStyles={styles.spacing}>
           Press me
         </Button>
+        <Checkbox
+          isChecked={isChecked}
+          setIsChecked={setIsChecked}
+          handleOnPress={checkboxOnPress}
+        />
       </View>
     </SafeAreaView>
   );
